@@ -1,1 +1,4 @@
+com/example/memorizerbackend/db/MainController.class
+com/example/memorizerbackend/db/User.class
+com/example/memorizerbackend/db/UserRepository.class
 com/example/memorizerbackend/MemorizerBackendApplication.class
