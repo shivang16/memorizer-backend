@@ -45,22 +45,22 @@ DROP TABLE IF EXISTS `Memory`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Memory` (
-  `CreateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `MemoryId` int unsigned NOT NULL AUTO_INCREMENT,
-  `CreatedBy` int unsigned NOT NULL,
-  `CreatedFor` int unsigned NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `Content` blob,
-  `Photo` blob,
-  `Privacy` tinyint DEFAULT '1',
-  PRIMARY KEY (`MemoryId`),
-  UNIQUE KEY `MemoryId_UNIQUE` (`MemoryId`),
-  KEY `createdBy_idx` (`CreatedBy`),
-  KEY `createdFor_idx` (`CreatedFor`),
-  CONSTRAINT `createdBy` FOREIGN KEY (`CreatedBy`) REFERENCES `User` (`user_id`),
-  CONSTRAINT `createdFor` FOREIGN KEY (`CreatedFor`) REFERENCES `User` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `memory_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `created_by` int unsigned NOT NULL,
+  `created_for` int unsigned NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` blob,
+  `photo` blob,
+  `privacy` tinyint DEFAULT '1',
+  PRIMARY KEY (`memory_id`),
+  UNIQUE KEY `MemoryId_UNIQUE` (`memory_id`),
+  KEY `createdBy_idx` (`created_by`),
+  KEY `createdFor_idx` (`created_for`),
+  CONSTRAINT `createdBy` FOREIGN KEY (`created_by`) REFERENCES `User` (`user_id`),
+  CONSTRAINT `createdFor` FOREIGN KEY (`created_for`) REFERENCES `User` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +69,7 @@ CREATE TABLE `Memory` (
 
 LOCK TABLES `Memory` WRITE;
 /*!40000 ALTER TABLE `Memory` DISABLE KEYS */;
+INSERT INTO `Memory` VALUES ('2022-07-05 12:38:54','2022-07-05 12:38:54',1,1,2,'Hello',_binary 'abcded',NULL,1),('2022-07-05 12:39:04','2022-07-05 12:39:04',2,1,2,'Bye',_binary 'abcsdvjbadvded',NULL,1),('2022-07-05 12:39:20','2022-07-05 12:39:20',3,1,4,'no',_binary 'wkjbvw vw mf we wf',NULL,0),('2022-07-05 12:39:31','2022-07-05 12:39:31',4,2,4,'JBjksbfvds',_binary 'wkjbvw vw advljbnqvjbnmf we wf',NULL,0),('2022-07-05 12:39:45','2022-07-05 12:39:45',5,2,3,'Name',_binary 'WE  weff f we wf',NULL,0),('2022-07-05 12:39:55','2022-07-05 12:39:55',6,2,1,'Name ef lnkjbd ',_binary 'WE   wfwe fweff f we wf',NULL,1),('2022-07-05 12:40:07','2022-07-05 12:40:07',7,3,1,'YYWLJFcm',_binary 'kqjdwe e fweff f we wf',NULL,1),('2022-07-05 12:40:20','2022-07-05 12:40:20',8,3,4,'psdkfp wf','',NULL,1);
 /*!40000 ALTER TABLE `Memory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,7 +97,7 @@ CREATE TABLE `User` (
   UNIQUE KEY `UserId_UNIQUE` (`user_id`),
   UNIQUE KEY `Email_UNIQUE` (`email`),
   UNIQUE KEY `ContactNo_UNIQUE` (`contact_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +106,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES ('2022-07-05 12:16:16','2022-07-05 12:16:16',1,'Shivang','Mangal','shivangmangal@gmail.com','9876543210','1999-06-16','welcome1',NULL,0,0),('2022-07-05 12:17:31','2022-07-05 12:17:31',2,'Ashutosh','Singh','ashu@gmail.com','8876543210','1998-03-21','welcome2',NULL,0,0),('2022-07-05 12:18:01','2022-07-05 12:18:01',3,'Adarsh','Patel','adarshpatel@gmail.com','8876543219','1999-10-25','welcome3',NULL,0,0),('2022-07-05 12:18:39','2022-07-05 12:18:39',4,'Saksham','Agrawal','sakshamagr@gmail.com','8876773219','1998-08-09','welcome4',NULL,0,0);
+INSERT INTO `User` VALUES ('2022-07-05 12:16:16','2022-07-05 12:16:16',1,'Shivang','Mangal','shivangmangal@gmail.com','9876543210','1999-06-16','welcome1',NULL,0,0),('2022-07-05 12:17:31','2022-07-05 12:17:31',2,'Ashutosh','Singh','ashu@gmail.com','8876543210','1998-03-21','welcome2',NULL,0,0),('2022-07-05 12:18:01','2022-07-05 12:18:01',3,'Adarsh','Patel','adarshpatel@gmail.com','8876543219','1999-10-25','welcome3',NULL,0,0),('2022-07-05 12:18:39','2022-07-05 12:18:39',4,'Saksham','Agrawal','sakshamagr@gmail.com','8876773219','1998-08-09','welcome4',NULL,0,0),('2022-07-05 06:46:16','2022-07-05 06:46:16',5,'Mandeep','Singh','mandeep@gmail.com','9898989898','1999-11-11','welcome5',_binary 'ihwbdv',0,0);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +119,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05 18:02:56
+-- Dump completed on 2022-07-05 18:30:47

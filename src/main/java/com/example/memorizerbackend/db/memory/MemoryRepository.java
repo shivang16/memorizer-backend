@@ -1,5 +1,7 @@
 package com.example.memorizerbackend.db.memory;
 
-public class MemoryRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface MemoryRepository extends CrudRepository<Memory,Integer> {
     
 }
