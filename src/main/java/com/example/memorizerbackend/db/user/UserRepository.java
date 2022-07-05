@@ -1,4 +1,4 @@
-package com.example.memorizerbackend.db;
+package com.example.memorizerbackend.db.user;
 
 import org.springframework.data.repository.CrudRepository;
 
