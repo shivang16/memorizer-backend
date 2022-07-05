@@ -20,9 +20,9 @@ public class Memory {
 
     private String Title;
 
-    private Blob Content;
+    private String Content;
 
-    private Blob Photo;
+    private String Photo;
 
     private Byte Privacy;
 
@@ -62,19 +62,19 @@ public class Memory {
         Title = title;
     }
 
-    public Blob getContent() {
+    public String getContent() {
         return Content;
     }
 
-    public void setContent(Blob content) {
+    public void setContent(String content) {
         Content = content;
     }
 
-    public Blob getPhoto() {
+    public String getPhoto() {
         return Photo;
     }
 
-    public void setPhoto(Blob photo) {
+    public void setPhoto(String photo) {
         Photo = photo;
     }
 
@@ -101,5 +101,5 @@ public class Memory {
     public void setUpdateTime(Timestamp updateTime) {
         UpdateTime = updateTime;
     }
-    
+
 }

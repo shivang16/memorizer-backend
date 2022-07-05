@@ -1,6 +1,5 @@
 package com.example.memorizerbackend.db.user;
 
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.Timestamp;
 
@@ -30,7 +29,7 @@ public class User {
 
   private Byte DefaultMemoryPrivacy;
 
-  private Blob ProfilePic;
+  private String ProfilePic;
 
   private Timestamp CreateTime;
 
@@ -86,11 +85,11 @@ public class User {
       ContactNo = contactNo;
   }
 
-  public Blob getProfilePic() {
+  public String getProfilePic() {
       return ProfilePic;
   }
 
-  public void setProfilePic(Blob profilePic) {
+  public void setProfilePic(String profilePic) {
       ProfilePic = profilePic;
   }
 
