@@ -5,37 +5,51 @@ import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
   @Id
+  @Column(name="UserId")
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer UserId;
 
+  @Column(name="FirstName")
   private String FirstName;
 
+  @Column(name="LastName")
   private String LastName;
 
+  @Column(name="Email")
   private String Email;
 
+  @Column(name="ContactNo")
   private String ContactNo;
 
+  @Column(name="Password")
   private String Password;
 
+  @Column(name="EmailVerified")
   private Byte EmailVerified;
 
+  @Column(name="DefaultMemoryPrivacy")
   private Byte DefaultMemoryPrivacy;
 
+  @Column(name="ProfilePic")
   private Blob ProfilePic;
 
+  @Column(name="CreateTime")
   private Timestamp CreateTime;
 
+  @Column(name="UpdateTime")
   private Timestamp UpdateTime;
 
+  @Column(name="Dob")
   private Date Dob;
 
   public Integer getUserId() {
