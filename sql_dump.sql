@@ -58,8 +58,8 @@ CREATE TABLE `Memory` (
   UNIQUE KEY `MemoryId_UNIQUE` (`MemoryId`),
   KEY `createdBy_idx` (`CreatedBy`),
   KEY `createdFor_idx` (`CreatedFor`),
-  CONSTRAINT `createdBy` FOREIGN KEY (`CreatedBy`) REFERENCES `User` (`UserId`),
-  CONSTRAINT `createdFor` FOREIGN KEY (`CreatedFor`) REFERENCES `User` (`UserId`)
+  CONSTRAINT `createdBy` FOREIGN KEY (`CreatedBy`) REFERENCES `User` (`user_id`),
+  CONSTRAINT `createdFor` FOREIGN KEY (`CreatedFor`) REFERENCES `User` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,22 +80,22 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `User` (
-  `CreateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UserId` int unsigned NOT NULL AUTO_INCREMENT,
-  `FirstName` varchar(255) NOT NULL,
-  `LastName` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `ContactNo` char(10) NOT NULL,
-  `Dob` date DEFAULT NULL,
-  `Password` varchar(1024) NOT NULL,
-  `ProfilePic` blob,
-  `DefaultMemoryPrivacy` tinyint DEFAULT '0',
-  `EmailVerified` tinyint DEFAULT '0',
-  PRIMARY KEY (`UserId`),
-  UNIQUE KEY `UserId_UNIQUE` (`UserId`),
-  UNIQUE KEY `Email_UNIQUE` (`Email`),
-  UNIQUE KEY `ContactNo_UNIQUE` (`ContactNo`)
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_id` int unsigned NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact_no` char(10) NOT NULL,
+  `dob` date DEFAULT NULL,
+  `password` varchar(1024) NOT NULL,
+  `profile_pic` blob,
+  `default_memory_privacy` tinyint DEFAULT '0',
+  `email_verified` tinyint DEFAULT '0',
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `UserId_UNIQUE` (`user_id`),
+  UNIQUE KEY `Email_UNIQUE` (`email`),
+  UNIQUE KEY `ContactNo_UNIQUE` (`contact_no`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,4 +118,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05 17:48:54
+-- Dump completed on 2022-07-05 18:02:56
