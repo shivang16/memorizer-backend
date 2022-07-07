@@ -18,6 +18,7 @@ public class MemoryController {
   private MemoryRepository memoryRepository;
 
   //TODO: Add method to add memory
+  //TODO: Create constructor function to solve the issue
   // @PostMapping(path="/add") // Map ONLY POST Requests
   // public @ResponseBody String addNewUser (@RequestParam String name
   //     , @RequestParam String email) {

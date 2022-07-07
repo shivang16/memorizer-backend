@@ -23,6 +23,7 @@ public class UserController {
     // @ResponseBody means the returned String is the response, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
     //TODO: Change to request body
+    //TODO: Create constuctor function to solve the parameter problem 
     System.out.println(usr.getFirstName());
     // User n = new User();
     // n.setContactNo(contactno);
