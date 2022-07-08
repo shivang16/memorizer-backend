@@ -37,6 +37,14 @@ public class User {
 
   private Date Dob;
 
+    public User(String FirstName,String LastName,String Email,String ContactNo,String Password){
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.Email = Email;
+        this.ContactNo = ContactNo;
+        this.Password = Password;
+    }
+
   public Integer getUserId() {
       return UserId;
   }

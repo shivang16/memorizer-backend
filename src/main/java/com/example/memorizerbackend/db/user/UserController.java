@@ -18,20 +18,15 @@ public class UserController {
   private UserRepository userRepository;
 
   @PostMapping(path="/add") // Map ONLY POST Requests
-  public @ResponseBody String addNewUser (@RequestParam String firstname
-      , @RequestParam String email, @RequestParam String lastname, @RequestParam String contactno, @RequestParam String password,@RequestBody User usr) {
+  public @ResponseBody String addNewUser (@RequestBody User usr) {
     // @ResponseBody means the returned String is the response, not a view name
     // @RequestParam means it is a parameter from the GET or POST request
-    //TODO: Change to request body
-    //TODO: Create constuctor function to solve the parameter problem 
-    System.out.println(usr.getFirstName());
-    // User n = new User();
-    // n.setContactNo(contactno);
-    // n.setFirstName(firstname);
-    // n.setLastName(lastname);
-    // n.setEmail(email);
-    // n.setPassword(password);
-    // userRepository.save(n);
+    // n.setContactNo(usr.getContactNo());
+    // n.setFirstName(usr.getFirstName());
+    // n.setLastName(usr.getLastName());
+    // n.setEmail(usr.getEmail());
+    // n.setPassword(usr.getPassword());
+    userRepository.save(usr);
     return "Saved";
   }
 
