@@ -37,6 +37,9 @@ public class User {
 
   private Date Dob;
 
+  //Default Constructor  
+  public User(){};
+
     public User(String FirstName,String LastName,String Email,String ContactNo,String Password){
         this.FirstName = FirstName;
         this.LastName = LastName;
