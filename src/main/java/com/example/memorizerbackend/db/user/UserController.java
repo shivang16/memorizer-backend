@@ -20,13 +20,7 @@ public class UserController {
 
   @PostMapping(path = "/add") // Map ONLY POST Requests
   public @ResponseBody String addNewUser(@RequestBody User usr) {
-    System.out.println("-------------------------------");
-    System.out.println(usr.getEmail());
-    System.out.println(usr.getUpdateTime());
-    System.out.println(usr.getCreateTime());
-    System.out.println(usr.getDefaultMemoryPrivacy());
-    System.out.println("-------------------------------");
-    // userRepository.save(usr);
+    userRepository.save(usr);
     return "Saved";
   }
 

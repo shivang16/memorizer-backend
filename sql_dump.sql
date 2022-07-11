@@ -33,7 +33,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (1);
+INSERT INTO `hibernate_sequence` VALUES (28);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `User` (
   UNIQUE KEY `UserId_UNIQUE` (`user_id`),
   UNIQUE KEY `Email_UNIQUE` (`email`),
   UNIQUE KEY `ContactNo_UNIQUE` (`contact_no`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES ('2022-07-05 12:16:16','2022-07-05 12:16:16',1,'Shivang','Mangal','shivangmangal@gmail.com','9876543210','1999-06-16','welcome1',NULL,0,0),('2022-07-05 12:17:31','2022-07-05 12:17:31',2,'Ashutosh','Singh','ashu@gmail.com','8876543210','1998-03-21','welcome2',NULL,0,0),('2022-07-05 12:18:01','2022-07-05 12:18:01',3,'Adarsh','Patel','adarshpatel@gmail.com','8876543219','1999-10-25','welcome3',NULL,0,0),('2022-07-05 12:18:39','2022-07-05 12:18:39',4,'Saksham','Agrawal','sakshamagr@gmail.com','8876773219','1998-08-09','welcome4',NULL,0,0),('2022-07-05 06:46:16','2022-07-05 06:46:16',5,'Mandeep','Singh','mandeep@gmail.com','9898989898','1999-11-11','welcome5',_binary 'ihwbdv',0,0);
+INSERT INTO `User` VALUES ('2022-07-05 12:16:16','2022-07-05 12:16:16',1,'Shivang','Mangal','shivangmangal@gmail.com','9876543210','1999-06-16','welcome1',NULL,0,0),('2022-07-05 12:17:31','2022-07-05 12:17:31',2,'Ashutosh','Singh','ashu@gmail.com','8876543210','1998-03-21','welcome2',NULL,0,0),('2022-07-05 12:18:01','2022-07-05 12:18:01',3,'Adarsh','Patel','adarshpatel@gmail.com','8876543219','1999-10-25','welcome3',NULL,0,0),('2022-07-05 12:18:39','2022-07-05 12:18:39',4,'Saksham','Agrawal','sakshamagr@gmail.com','8876773219','1998-08-09','welcome4',NULL,0,0),('2022-07-05 06:46:16','2022-07-05 06:46:16',5,'Mandeep','Singh','mandeep@gmail.com','9898989898','1999-11-11','welcome5',_binary 'ihwbdv',0,0),(NULL,NULL,6,'ayush','Sharma','ayush1234@hotmail.com','9870123164',NULL,'welcome6',NULL,0,1),(NULL,NULL,7,'Sachin','Saharan','sachin@hotmail.com','8870123164',NULL,'{\n    \"firstname\":\"Ayush\",\n    \"lastname\":\"Sharma\",\n    \"email\":\"ayush1234@hotmail.com\",\n    \"contactno\":\"9870123164\",\n    \"password\":\"welcome7\"\n}',NULL,0,0),(NULL,NULL,9,'mayank','garg','mayank@hotmail.com','8070123164',NULL,'welcom4',NULL,1,1),(NULL,NULL,11,'Karan','Purswani','karan@hotmail.com','9871123164',NULL,'welcome8',NULL,1,0),(NULL,NULL,12,'Aditya','Kumar','aditya@hotmail.com','4871123164',NULL,'welcome9',NULL,0,1),(NULL,NULL,18,'Soham','Roy','roysoham@hotmail.com','4800123164',NULL,'welcome10',NULL,1,1),(NULL,NULL,20,'Sohami','Royi','roysohami@hotmail.com','4800023164',NULL,'welcome10',NULL,0,1),(NULL,NULL,22,'Abhi','Royi','abhi@hotmail.com','9800023164',NULL,'welcome10',NULL,1,1),('2022-07-10 18:30:00','2022-07-11 16:31:18',27,'Abii','Royil','abhi@hotmaili.com','9800023168',NULL,'welcome10',NULL,0,0);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -119,4 +119,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-05 18:55:25
+-- Dump completed on 2022-07-11 22:03:54

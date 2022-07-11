@@ -32,10 +32,10 @@ public class User {
 
     private String Password;
 
-    @Column(columnDefinition = "boolean default false")
+    // @Column(columnDefinition = "boolean default false")
     private boolean EmailVerified;
 
-    @Column(columnDefinition = "boolean default false")
+    // @Column(columnDefinition = "boolean default false")
     private boolean DefaultMemoryPrivacy;
 
     private String ProfilePic;
@@ -51,7 +51,6 @@ public class User {
 
     @ColumnDefault("")
     private Date Dob;
-    // TODO: Column default not working
 
     public User(String FirstName, String LastName, String Email, String ContactNo, String Password) {
         this.FirstName = FirstName;
@@ -63,9 +62,6 @@ public class User {
 
     // Default Constructor
     public User() {
-        System.out.println("Inside default contructor");
-        System.out.println(this.DefaultMemoryPrivacy);
-        System.out.println(this.CreateTime);
     };
 
     public Integer getUserId() {
