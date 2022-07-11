@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.ColumnDefault;
+
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
@@ -15,32 +17,49 @@ public class User {
   @GeneratedValue(strategy=GenerationType.AUTO)
   private Integer UserId;
 
+  @ColumnDefault("")
   private String FirstName;
 
+  @ColumnDefault("")
   private String LastName;
 
+  @ColumnDefault("")
   private String Email;
 
+  @ColumnDefault("")
   private String ContactNo;
 
+  @ColumnDefault("")
   private String Password;
 
+  @ColumnDefault("false")
   private Byte EmailVerified;
 
+  @ColumnDefault("false")
   private Byte DefaultMemoryPrivacy;
 
+  @ColumnDefault("")
   private String ProfilePic;
 
+  @ColumnDefault("System.currentTimeMillis()")
   private Timestamp CreateTime;
 
+  @ColumnDefault("System.currentTimeMillis()")
   private Timestamp UpdateTime;
 
+  @ColumnDefault("")
   private Date Dob;
+    //TODO: Column default not working
 
-  //Default Constructor  
-  public User(){};
+
+//   Default Constructor  
+    //TODO: Normal constructor not able to overwrite default constructor
+    public User(){
+    
+    };
 
     public User(String FirstName,String LastName,String Email,String ContactNo,String Password){
+        super();
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Email = Email;
