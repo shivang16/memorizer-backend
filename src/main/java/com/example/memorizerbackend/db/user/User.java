@@ -9,57 +9,49 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.ColumnDefault;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
-  @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
-  private Integer UserId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer UserId;
 
-  @ColumnDefault("")
-  private String FirstName;
+    @ColumnDefault("")
+    private String FirstName;
 
-  @ColumnDefault("")
-  private String LastName;
+    @ColumnDefault("")
+    private String LastName;
 
-  @ColumnDefault("")
-  private String Email;
+    @ColumnDefault("")
+    private String Email;
 
-  @ColumnDefault("")
-  private String ContactNo;
+    @ColumnDefault("")
+    private String ContactNo;
 
-  @ColumnDefault("")
-  private String Password;
+    @ColumnDefault("")
+    private String Password;
 
-  @ColumnDefault("false")
-  private Byte EmailVerified;
+    @ColumnDefault("false")
+    private Byte EmailVerified;
 
-  @ColumnDefault("false")
-  private Byte DefaultMemoryPrivacy;
+    @ColumnDefault("false")
+    private Byte DefaultMemoryPrivacy;
 
-  @ColumnDefault("")
-  private String ProfilePic;
+    @ColumnDefault("")
+    private String ProfilePic;
 
-  @ColumnDefault("System.currentTimeMillis()")
-  private Timestamp CreateTime;
+    @ColumnDefault("System.currentTimeMillis()")
+    private Timestamp CreateTime;
 
-  @ColumnDefault("System.currentTimeMillis()")
-  private Timestamp UpdateTime;
+    @ColumnDefault("System.currentTimeMillis()")
+    private Timestamp UpdateTime;
 
-  @ColumnDefault("")
-  private Date Dob;
-    //TODO: Column default not working
+    @ColumnDefault("")
+    private Date Dob;
+    // TODO: Column default not working
 
-
-//   Default Constructor  
-    //TODO: Normal constructor not able to overwrite default constructor
-    public User(){
-    
-    };
-
-    public User(String FirstName,String LastName,String Email,String ContactNo,String Password){
-        super();
+    public User(String FirstName, String LastName, String Email, String ContactNo, String Password) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Email = Email;
@@ -67,103 +59,104 @@ public class User {
         this.Password = Password;
     }
 
-  public Integer getUserId() {
-      return UserId;
-  }
+    // Default Constructor
+    public User() {
 
-  public void setUserId(Integer userId) {
-      UserId = userId;
-  }
+    };
 
-  public String getFirstName() {
-      return FirstName;
-  }
+    public Integer getUserId() {
+        return UserId;
+    }
 
-  public void setFirstName(String firstName) {
-      FirstName = firstName;
-  }
+    public void setUserId(Integer userId) {
+        UserId = userId;
+    }
 
-  public String getLastName() {
-      return LastName;
-  }
+    public String getFirstName() {
+        return FirstName;
+    }
 
-  public void setLastName(String lastName) {
-      LastName = lastName;
-  }
+    public void setFirstName(String firstName) {
+        FirstName = firstName;
+    }
 
-  public String getEmail() {
-      return Email;
-  }
+    public String getLastName() {
+        return LastName;
+    }
 
-  public void setEmail(String email) {
-      Email = email;
-  }
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
 
-  public Byte getEmailVerified() {
-      return EmailVerified;
-  }
+    public String getEmail() {
+        return Email;
+    }
 
-  public void setEmailVerified(Byte emailVerified) {
-      EmailVerified = emailVerified;
-  }
+    public void setEmail(String email) {
+        Email = email;
+    }
 
-  public String getContactNo() {
-      return ContactNo;
-  }
+    public Byte getEmailVerified() {
+        return EmailVerified;
+    }
 
-  public void setContactNo(String contactNo) {
-      ContactNo = contactNo;
-  }
+    public void setEmailVerified(Byte emailVerified) {
+        EmailVerified = emailVerified;
+    }
 
-  public String getProfilePic() {
-      return ProfilePic;
-  }
+    public String getContactNo() {
+        return ContactNo;
+    }
 
-  public void setProfilePic(String profilePic) {
-      ProfilePic = profilePic;
-  }
+    public void setContactNo(String contactNo) {
+        ContactNo = contactNo;
+    }
 
-  public Timestamp getCreateTime() {
-      return CreateTime;
-  }
+    public String getProfilePic() {
+        return ProfilePic;
+    }
 
-  public void setCreateTime(Timestamp createTime) {
-      CreateTime = createTime;
-  }
+    public void setProfilePic(String profilePic) {
+        ProfilePic = profilePic;
+    }
 
-  public Byte getDefaultMemoryPrivacy() {
-      return DefaultMemoryPrivacy;
-  }
+    public Timestamp getCreateTime() {
+        return CreateTime;
+    }
 
-  public void setDefaultMemoryPrivacy(Byte defaultMemoryPrivacy) {
-      DefaultMemoryPrivacy = defaultMemoryPrivacy;
-  }
+    public void setCreateTime(Timestamp createTime) {
+        CreateTime = createTime;
+    }
 
-  public Date getDob() {
-      return Dob;
-  }
+    public Byte getDefaultMemoryPrivacy() {
+        return DefaultMemoryPrivacy;
+    }
 
-  public void setDob(Date dob) {
-      Dob = dob;
-  }
+    public void setDefaultMemoryPrivacy(Byte defaultMemoryPrivacy) {
+        DefaultMemoryPrivacy = defaultMemoryPrivacy;
+    }
 
-  public String getPassword() {
-      return Password;
-  }
+    public Date getDob() {
+        return Dob;
+    }
 
-  public void setPassword(String password) {
-      Password = password;
-  }
+    public void setDob(Date dob) {
+        Dob = dob;
+    }
 
-  public Timestamp getUpdateTime() {
-      return UpdateTime;
-  }
+    public String getPassword() {
+        return Password;
+    }
 
-  public void setUpdateTime(Timestamp updateTime) {
-      UpdateTime = updateTime;
-  }
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public Timestamp getUpdateTime() {
+        return UpdateTime;
+    }
+
+    public void setUpdateTime(Timestamp updateTime) {
+        UpdateTime = updateTime;
+    }
 }
-
-
-
-  
