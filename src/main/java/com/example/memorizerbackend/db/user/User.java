@@ -1,15 +1,20 @@
 package com.example.memorizerbackend.db.user;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.ColumnDefault;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class User {
@@ -17,34 +22,31 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer UserId;
 
-    @ColumnDefault("")
     private String FirstName;
 
-    @ColumnDefault("")
     private String LastName;
 
-    @ColumnDefault("")
     private String Email;
 
-    @ColumnDefault("")
     private String ContactNo;
 
-    @ColumnDefault("")
     private String Password;
 
-    @ColumnDefault("false")
-    private Byte EmailVerified;
+    @Column(columnDefinition = "boolean default false")
+    private boolean EmailVerified;
 
-    @ColumnDefault("false")
-    private Byte DefaultMemoryPrivacy;
+    @Column(columnDefinition = "boolean default false")
+    private boolean DefaultMemoryPrivacy;
 
-    @ColumnDefault("")
     private String ProfilePic;
 
-    @ColumnDefault("System.currentTimeMillis()")
-    private Timestamp CreateTime;
+    @CreationTimestamp
+    // @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date CreateTime;
 
-    @ColumnDefault("System.currentTimeMillis()")
+    @UpdateTimestamp
+    // @Temporal(TemporalType.TIMESTAMP)
+    @Column(columnDefinition = "TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP")
     private Timestamp UpdateTime;
 
     @ColumnDefault("")
@@ -61,7 +63,9 @@ public class User {
 
     // Default Constructor
     public User() {
-
+        System.out.println("Inside default contructor");
+        System.out.println(this.DefaultMemoryPrivacy);
+        System.out.println(this.CreateTime);
     };
 
     public Integer getUserId() {
@@ -96,14 +100,6 @@ public class User {
         Email = email;
     }
 
-    public Byte getEmailVerified() {
-        return EmailVerified;
-    }
-
-    public void setEmailVerified(Byte emailVerified) {
-        EmailVerified = emailVerified;
-    }
-
     public String getContactNo() {
         return ContactNo;
     }
@@ -120,19 +116,19 @@ public class User {
         ProfilePic = profilePic;
     }
 
-    public Timestamp getCreateTime() {
-        return CreateTime;
+    public boolean getEmailVerified() {
+        return EmailVerified;
     }
 
-    public void setCreateTime(Timestamp createTime) {
-        CreateTime = createTime;
+    public void setEmailVerified(boolean emailVerified) {
+        EmailVerified = emailVerified;
     }
 
-    public Byte getDefaultMemoryPrivacy() {
+    public boolean getDefaultMemoryPrivacy() {
         return DefaultMemoryPrivacy;
     }
 
-    public void setDefaultMemoryPrivacy(Byte defaultMemoryPrivacy) {
+    public void setDefaultMemoryPrivacy(boolean defaultMemoryPrivacy) {
         DefaultMemoryPrivacy = defaultMemoryPrivacy;
     }
 
@@ -158,5 +154,13 @@ public class User {
 
     public void setUpdateTime(Timestamp updateTime) {
         UpdateTime = updateTime;
+    }
+
+    public Date getCreateTime() {
+        return CreateTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        CreateTime = createTime;
     }
 }

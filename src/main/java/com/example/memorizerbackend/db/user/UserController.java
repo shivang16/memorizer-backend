@@ -1,5 +1,7 @@
 package com.example.memorizerbackend.db.user;
 
+import javax.persistence.EntityManager;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,8 +22,9 @@ public class UserController {
   public @ResponseBody String addNewUser(@RequestBody User usr) {
     System.out.println("-------------------------------");
     System.out.println(usr.getEmail());
-    System.out.println(usr.getProfilePic());
+    System.out.println(usr.getUpdateTime());
     System.out.println(usr.getCreateTime());
+    System.out.println(usr.getDefaultMemoryPrivacy());
     System.out.println("-------------------------------");
     // userRepository.save(usr);
     return "Saved";
