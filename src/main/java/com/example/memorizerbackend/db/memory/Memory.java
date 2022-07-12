@@ -1,5 +1,8 @@
 package com.example.memorizerbackend.db.memory;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.sql.Blob;
 import java.sql.Timestamp;
 
@@ -24,11 +27,25 @@ public class Memory {
 
     private String Photo;
 
-    private Byte Privacy;
+    private boolean Privacy;
 
+    @CreationTimestamp
     private Timestamp CreateTime;
 
+    @UpdateTimestamp
     private Timestamp UpdateTime;
+
+    //Default constructor
+    public Memory(){
+
+    }
+
+    public Memory(Integer CreatedBy,Integer CreatedFor,String Title){
+        this.CreatedBy = CreatedBy;
+        this.CreatedFor = CreatedFor;
+        this.Title = Title;
+    }
+
 
     public Integer getMemoryId() {
         return MemoryId;
@@ -78,11 +95,11 @@ public class Memory {
         Photo = photo;
     }
 
-    public Byte getPrivacy() {
+    public boolean getPrivacy() {
         return Privacy;
     }
 
-    public void setPrivacy(Byte privacy) {
+    public void setPrivacy(boolean privacy) {
         Privacy = privacy;
     }
 

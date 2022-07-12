@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -32,24 +33,21 @@ public class User {
 
     private String Password;
 
-    // @Column(columnDefinition = "boolean default false")
     private boolean EmailVerified;
 
-    // @Column(columnDefinition = "boolean default false")
     private boolean DefaultMemoryPrivacy;
 
     private String ProfilePic;
 
     @CreationTimestamp
-    // @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date CreateTime;
+    private Timestamp CreateTime;
 
     @UpdateTimestamp
-    // @Temporal(TemporalType.TIMESTAMP)
     @Column(columnDefinition = "TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP")
     private Timestamp UpdateTime;
 
     @ColumnDefault("")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date Dob;
 
     public User(String FirstName, String LastName, String Email, String ContactNo, String Password) {
@@ -152,11 +150,11 @@ public class User {
         UpdateTime = updateTime;
     }
 
-    public Date getCreateTime() {
+    public Timestamp getCreateTime() {
         return CreateTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(Timestamp createTime) {
         CreateTime = createTime;
     }
 }
