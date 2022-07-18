@@ -20,7 +20,6 @@ public class Authenticator {
         PEncoder encoder = new PEncoder(10);
         String EncodedPassword = encoder.passwordEncoder().encode(Password);
         usr.setPassword(EncodedPassword);
-        //TODO: Collect expection/error
         userRepository.save(usr);
         return ResponseEntity.status(200).body("User added");
     };
